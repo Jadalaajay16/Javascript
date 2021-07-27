@@ -1,0 +1,89 @@
+/* Concept pointers:
+1.VAR:
+You can declare many variables in one statement.
+var person = "John Doe", carName = "Volvo", price = 200;
+A variable declared without a value will have the value undefined.
+var carName;
+If you re-declare a JavaScript variable, it will not lose its value.
+var carName = "Volvo";
+var carName;
+The variable carName will still have the value "Volvo" after the execution of these statements:
+var x = "5" + 2 + 3; op: 523(If you put a number in quotes, the rest of the numbers will be treated as strings, and concatenated.)
+
+Since JavaScript treats a dollar sign as a letter, identifiers containing $ are valid variable names:
+ professional programmers often use it as an alias for the main function in a JavaScript library.
+var $$$ = "Hello World";
+var $ = 2;
+var $myMoney = 5;
+
+Since JavaScript treats underscore as a letter, identifiers containing _ are valid variable names:
+professional programmers is to use it as an alias for "private (hidden)" variables.
+
+var _lastName = "Johnson";
+var _x = 2;
+var _100 = 5;
+
+2.LET:
+Variables defined with let cannot be Redeclared.
+
+Variables defined with let must be Declared before use.
+
+Variables defined with let have Block Scope.
+
+Note: var:Variables declared with the var keyword can NOT have block scope.
+    var: Variables declared inside a { } block can be accessed from outside the block.
+    var:Redeclaring a variable inside a block will also redeclare the variable outside the block:
+    let:Redeclaring a variable inside a block will not redeclare the variable outside the block:
+    var x = 10;
+// Here x is 10
+{
+var x = 2;
+// Here x is 2
+}
+// Here x is 2
+
+
+
+
+*/
+
+//block of code 
+//var - global level/functional
+//let global level/block level {}
+//const -
+const greet = "Evening"
+//greet = "night" //we cannot reinitialize const
+
+//1.var:if we define var inside a function the scope will die in function only.
+//So var is defined globally not funcitonal level
+//2.let:  Cannot be redeclared,Must be declared before use,have block scope
+
+if( 1 ==1)
+{
+    let greet = "Afternoona"
+}
+
+function add(a,b)
+{
+    let greet = "Morning"
+    return a+b
+}
+
+let sum =add(2,3)
+console.log(sum)
+console.log(greet)
+
+//do not have name =>Anyonymus function-- Function expressions
+
+let sumOfIntegers = function(c,d) //anyonymus function can be assigned to a variable
+{
+    return c+d
+}
+
+let sumOfNumbers= (c,d)=> c+d  //above funciton and this are same=> fat pipe operator
+
+console.log(sumOfNumbers(2,3))
+
+
+
+
